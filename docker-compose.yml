@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  # API de détection de fraude
+  fraud-detection-api:
+    build: .
+    container_name: fraud-detection-api
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./models:/app/models
+      - ./logs:/app/logs
+      - ./models_backup:/app/models_backup
+    environment:
+      - FLASK_ENV=production
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - fraud-detection-network
+
+  # Scheduler pour le retraining automatique (optionnel)
+  retraining-scheduler:
+    build: .
+    container_name: retraining-scheduler
+    volumes:
+      - ./models:/app/models
+      - ./logs:/app/logs
+      - ./models_backup:/app/models_backup
+      - ./xente-fraud-detection:/app/xente-fraud-detection
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: >
+      sh -c "
+        while true; do
+          echo 'Retraining planifié dans 24 heures...';
+          sleep 86400;
+          python automated_retraining.py;
+        done
+      "
+    restart: unless-stopped
+    networks:
+      - fraud-detection-network
+
+networks:
+  fraud-detection-network:
+    driver: bridge
+
+volumes:
+  models:
+  logs:
+  models_backup:

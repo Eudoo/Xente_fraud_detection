@@ -1,0 +1,24 @@
+2026-01-08 01:29:14,822 - __main__ - INFO - ================================================================================
+2026-01-08 01:29:14,825 - __main__ - INFO - DÉBUT DE L'ENTRAÎNEMENT DU MODÈLE
+2026-01-08 01:29:14,831 - __main__ - INFO - ================================================================================
+2026-01-08 01:29:14,836 - __main__ - INFO - Chargement des données depuis xente-fraud-detection/training.csv
+2026-01-08 01:29:16,819 - __main__ - INFO - Données chargées: (95662, 16)
+2026-01-08 01:29:16,821 - __main__ - INFO - Application du feature engineering...
+2026-01-08 01:29:21,374 - __main__ - INFO - Feature engineering terminé. Nouvelles dimensions: (95662, 34)
+2026-01-08 01:29:21,578 - __main__ - INFO - Nombre de features utilisées: 21
+2026-01-08 01:29:21,955 - __main__ - INFO - Division des données...
+2026-01-08 01:29:22,821 - __main__ - INFO - Taille train: (76529, 21), Taille validation: (19133, 21)
+2026-01-08 01:29:22,949 - __main__ - INFO - Normalisation des features...
+2026-01-08 01:29:23,453 - __main__ - INFO - Entraînement du modèle Random Forest...
+2026-01-08 01:29:29,185 - __main__ - INFO - Entraînement terminé
+2026-01-08 01:29:29,186 - __main__ - INFO - Évaluation du modèle...
+2026-01-08 01:29:30,073 - __main__ - INFO - Accuracy: 0.9996
+2026-01-08 01:29:30,073 - __main__ - INFO - F1-Score: 0.9067
+2026-01-08 01:29:30,083 - __main__ - INFO - ROC-AUC: 0.9998
+2026-01-08 01:29:30,083 - __main__ - INFO - Sauvegarde du modèle dans models\fraud_detection_model.pkl
+2026-01-08 01:29:30,127 - __main__ - INFO - Sauvegarde du scaler dans models\scaler.pkl
+2026-01-08 01:29:30,132 - __main__ - INFO - Sauvegarde des encoders dans models\encoders.pkl
+2026-01-08 01:29:30,345 - __main__ - INFO - Sauvegarde des métadonnées dans models\model_metadata.pkl
+2026-01-08 01:29:30,420 - __main__ - INFO - ================================================================================
+2026-01-08 01:29:30,444 - __main__ - INFO - ENTRAÎNEMENT TERMINÉ AVEC SUCCÈS
+2026-01-08 01:29:30,452 - __main__ - INFO - ================================================================================

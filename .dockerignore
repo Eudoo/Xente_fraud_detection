@@ -1,0 +1,67 @@
+# Fichiers et dossiers à ignorer lors de la construction Docker
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs (on les monte en volume)
+logs/
+*.log
+
+# Models backup (on les monte en volume)
+models_backup/
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+*.md
+!README.md
+
+# Visualizations (pas nécessaires dans le conteneur)
+visualizations/
+
+# Fichiers de résultats
+submission.csv
+rapport_final.txt
+resultats.html
+
+# Scripts de setup
+setup_cron.sh
+setup_scheduled_task.ps1
+
+# Autres
+.DS_Store
+Thumbs.db
