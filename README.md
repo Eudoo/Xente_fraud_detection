@@ -180,6 +180,4 @@ Pour toute question sur ce TP, consultez :
 - Les visualisations dans `visualizations/` pour l'analyse graphique
 - Le code commenté dans `fraud_detection_analysis.py`
 
----
 
-**🎉 Bon TP !**
